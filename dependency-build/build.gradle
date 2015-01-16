@@ -1,11 +1,7 @@
-task first << { task->
+def printTaskName = { task->
 	println "Run ${task.name}"
 }
-
-task second << { task ->
-	println "Run ${task.name}"
-}
-
-second.dependsOn 'first'
-
+task first << printTaskName
+task second(dependsOn: first) << printTaskName
+task third(dependsOn: second) << printTaskName
 
