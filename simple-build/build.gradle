@@ -1,0 +1,36 @@
+project.description = 'Simple project'
+
+task simple << {
+	println "Running simple task for project ${project.description}"
+}
+
+task first {
+	doFirst{
+		println "running first"
+	}
+}
+
+task second {
+	doLast { Task task -> 
+		println "running ${task.name}"
+	} 
+}
+
+task third << { taskObject -> 
+	println "running ${taskObject.name}"
+}
+
+task numbers << {
+	(1..4).each { number ->
+		def squared = number * number
+		println "Square of ${number} = ${squared}"
+	}
+}
+
+task list {
+	doLast {
+		def list = ['Groovy', 'Gradle']
+		println list.collect {
+			it[0].toLowerCase()}.join('&')
+	}
+}
