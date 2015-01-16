@@ -1,0 +1,22 @@
+def printTaskName = { task->
+	println "Running ${task.name}"
+}
+
+task 'simple' << { task -> 
+	println "Running ${task.name}"
+}
+
+def simpleTask = 'sim'
+
+task(simpleTask) << { task ->
+	println "Running ${task.name}"
+}
+
+['Dev', 'Acc', 'Prod'].each { environment ->
+	task "deployTo${environment}" << { task ->
+		println "Deploying to ${environment}"
+	}
+}
+project.tasks.create('first') << printTaskName
+
+tasks.create(name: 'second', dependsOn: 'first') << printTaskName
