@@ -1,0 +1,19 @@
+//When not using the << and defining a task will turn it into a configuration closure
+//The only way to add actions is using the the doFirst and doLast
+
+def printTaskName = { task ->
+	println "Running ${task.name}"
+}
+
+task 'one' {
+	doFirst printTaskName
+}
+
+task 'two' << printTaskName
+
+//By not using << or doFirst or doLast this will always be executed need to use this for just doing configuration
+task 'three' {
+	println "running three"
+}
+
+defaultTasks 'one','two'
