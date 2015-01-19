@@ -1,0 +1,8 @@
+task simple << {
+	println "Hello ${message}"
+}
+
+//NOTE: the dynameic properties were depricated should use the ext attribute
+
+simple.ext.message = 'world'
+
