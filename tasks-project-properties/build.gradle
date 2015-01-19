@@ -1,0 +1,13 @@
+task simple << { task ->
+	println "Running ${task.name}"
+}
+
+simple.description = 'Print Task Name'
+simple.doLast {
+	println "Done"
+}
+
+project.simple.doFirst{
+	println "Start"
+}
+
