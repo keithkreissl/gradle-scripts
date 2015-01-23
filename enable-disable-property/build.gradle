@@ -1,0 +1,11 @@
+//This all depends on the attribute past to new File() if it does not exist then it will skip
+task 'listDirectory' {
+	def dir = new File('assemble')
+	enabled = dir.exists()
+	doLast {
+		println "List directory contents: ${dir.listFiles().join(',')}"
+	}
+}
+
+
+
