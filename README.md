@@ -33,3 +33,7 @@
   * creates an html file with the record of the time each task took to complete
     * file will be in build/reports/profile
   * ```gradle --profile```
+* Skipping from the Command Line
+  * Use the --exclue-tasks 
+  * Use -x
+  * Along with task name to skip a task
