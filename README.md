@@ -37,3 +37,8 @@
   * Use the --exclue-tasks 
   * Use -x
   * Along with task name to skip a task
+* Gradle Incremental Build Feature
+  * using the following properties will make sure to only run the build when the inputs have been modified since last run
+    * inputs
+    * outputs
+  * The inputs property has methods to add a directory, multiple files, or even properties to be watched for changes. The outputs property has methods to add a directory or multiple files to be monitored for changes.
