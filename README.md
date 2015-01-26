@@ -42,3 +42,11 @@
     * inputs
     * outputs
   * The inputs property has methods to add a directory, multiple files, or even properties to be watched for changes. The outputs property has methods to add a directory or multiple files to be monitored for changes.
+* File Object
+  * file() method will resolve the location of a file or directory relative to the current project and not the current working directory
+  * usually pass a String or java.io.File
+  * ```File wsdl = file('src/wsdl/sample.wsdl')
+       File xmlFile = new File('xml/input/sample.xml')
+       def inputXml = profile.file(xmlFile)
+    ```
+  *
